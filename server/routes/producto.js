@@ -3,7 +3,7 @@ let app = express();
 const {verificarToken} = require('../middlewares/authentication');
 let Producto = require('../models/producto');
 
-// Obtener productos
+// Obtener producto
 app.get('/producto', verificarToken, (req, res) => {
     let desde = req.query.desde;
     desde = Number(desde);
@@ -160,7 +160,7 @@ app.delete('/producto/:id', verificarToken, (req, res) => {
     });
 });
 
-// Buscar productos
+// Buscar producto
 app.get('/producto/buscar/:termino', verificarToken, (req, res) => {
     let termino = req.params.termino;
     let regex = new RegExp(termino, 'i');
